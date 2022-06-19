@@ -1,0 +1,26 @@
+<section class="page__new-products products">
+	<div class="products__container _container">
+		<div class="catalog__header _section-header">
+			<h2 class="catalog__title _section-title">Новинки</h2>
+		</div>
+		<div class="products__items">
+			@@loop("_product_lable.html", "../../data/product-new.json")
+		</div>
+		<div class="products__footer">
+			<a href="" class="products__more _new-products btn _white-btn">Показать еще</a>
+		</div>
+	</div>
+</section>
+<section class="page__popular-products products">
+	<div class="products__container _container">
+		<div class="catalog__header _section-header">
+			<h2 class="catalog__title _section-title">Популярное</h2>
+		</div>
+		<div class="products__items">
+			@@loop("_product_lable.html", "../../data/product-popular.json")
+		</div>
+		<div class="products__footer">
+			<a href="" class="products__more _popular-products btn _white-btn">Показать еще</a>
+		</div>
+	</div>
+</section>

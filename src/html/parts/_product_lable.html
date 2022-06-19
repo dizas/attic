@@ -1,0 +1,25 @@
+<article data-pid="@@id" class="products__item item-product">
+	<div class="item-product__labels">
+		@@if (labels.type == 'new') {<div class="item-product__label item-product__label_new">@@labels.value</div>}
+		@@if (labels.type == 'sale') {<div class="item-product__label item-product__label_sale">@@labels.value</div>}
+	</div>
+	<a href="@@url" class="item-product__image _ibg">
+		<img src="@@image" class="_active-img" alt="product-@@id">
+		<img src="@@imageHidden" class="_hidden-img" alt="product-@@id">
+	</a>
+	<div class="item-product__body">
+		<div class="item-product__content">
+			<a href="@@url" class="item-product__title _inter-title">@@title</a>
+			<div class="item-product__text">@@text</div>
+		</div>
+		<div class="item-product__prices">
+			<div class="item-product__price rub">@@price</div>
+		</div>
+		<div class="item-product__actions actions-product">
+			<div class="actions-product__body">
+				<a href="@@shareUrl" class="actions-product__link _icon-share">Поделиться</a>
+				<a href="@@likeUrl" class="actions-product__link _icon-favorite">В избранное</a>
+			</div>
+		</div>
+	</div>
+</article>

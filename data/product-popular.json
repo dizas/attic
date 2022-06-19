@@ -1,0 +1,59 @@
+[
+	{
+		"id": 1,
+		"url": "#",
+		"title": "Высокий комод ML050",
+		"text": "Высокий комод с утонченными линиями геометрического узора",
+		"labels": {
+			"type": "new",
+			"value": "New"
+		},
+		"image": "./img/products/product-1_2.png",
+		"imageHidden": "./img/products/product-1.png",
+		"price": "94 900",
+		"shareUrl": "",
+		"likeUrl": ""
+	},
+	{
+		"id": 2,
+		"url": "#",
+		"title": "Высокий комод TW020",
+		"text": "Высокий комод TWIN -  образец гармоничного сочетания элегантности",
+		"labels": {
+			"type": "sale",
+			"value": "Sale"
+		},
+		"image": "./img/products/product-2.png",
+		"imageHidden": "./img/products/product-2_2.png",
+		"price": "62 900",
+		"shareUrl": "",
+		"likeUrl": ""
+	},
+	{
+		"id": 3,
+		"url": "#",
+		"title": "Комод TW059",
+		"text": "Универсальный комод с шестью выдвижными ящиками",
+		"labels": "",
+		"image": "./img/products/product-3.png",
+		"imageHidden": "./img/products/product-3_2.png",
+		"price": "92 900",
+		"shareUrl": "",
+		"likeUrl": ""
+	},
+	{
+		"id": 4,
+		"url": "#",
+		"title": "Высокий комод TW020",
+		"text": "Высокий комод TWIN -  образец гармоничного сочетания элегантности",
+		"labels": {
+			"type": "new",
+			"value": "New"
+		},
+		"image": "./img/products/product-4.png",
+		"imageHidden": "./img/products/product-4_2.png",
+		"price": "62 900",
+		"shareUrl": "",
+		"likeUrl": ""
+	}
+]
