@@ -1,63 +1,31 @@
+const { watch, series, parallel } = require("gulp");
 
-const { src, dest, watch, series, parallel } = require("gulp");
+// Конфигурация
+const path = require("./config/path.js");
 
-// Плагины HTML
-// Сборка HTML
-const fileInclude = require("gulp-file-include");
-// Удаление пустых линий 
-const removeEmptyLines = require("gulp-remove-empty-lines");
-// Форматирование HTML
-const formatHtml = require('gulp-format-html');
-// Минимизация кода HTML
-const htmlMin = require('gulp-htmlmin');
-// Измерение размера HTML файла
-const size = require('gulp-size');
-
-// Системные плагины
 // Запуск браузера
 const browserSync = require('browser-sync').create();
-// Вывод ошибок
-const notify = require('gulp-notify');
-const plumber = require('gulp-plumber');
-// Удаление дирректорий
-const del = require('del');
 
+// Задачи
 
-// Обработка HTML
-const html = () => {
-	return src("./src/html/*.html")
-		.pipe(plumber({ errorHandler: notify.onError() }))
-		.pipe(fileInclude())
-		.pipe(removeEmptyLines())
-		.pipe(formatHtml({ "indent_with_tabs": true }))
-		//.pipe(size({ title: "Размер до сжатия" }))
-		//.pipe(htmlMin({ collapseWhitespace: true }))
-		//.pipe(size({ title: "Размер после сжатия" }))
-		.pipe(dest("./public"))
-		.pipe(browserSync.stream())
-}
-
-// Удаление ненужных дирректорий
-
-const clear = () => {
-	return del("./public")
-}
+const html = require('./task/html.js');
+const clear = require('./task/clear.js');
 
 // Сервер
 const server = () => {
 	browserSync.init({
 		server: {
-			baseDir: "./public"
+			baseDir: path.root
 		}
 	});
 }
 
 //Наблюдение
 const watcher = () => {
-	watch("./src/html/**/*.html", html)
+	watch(path.html.watch, html).on("all", browserSync.reload);
 }
 
-// Задачи
+// Экспорт
 exports.html = html;
 exports.watch = watcher;
 
