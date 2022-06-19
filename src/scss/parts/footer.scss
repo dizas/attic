@@ -1,0 +1,382 @@
+//====================================================================================================
+
+.footer {
+	background-color: #f0f0f0;
+	color: #A0A0A0;
+
+	// .footer__header
+	&__header {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-areas: "logo   contacts   question   social";
+		@include adaptiv-value('padding-top', 32, 20, 1);
+		@include adaptiv-value('padding-bottom', 32, 20, 1);
+		@include adaptiv-value('column-gap', 80, 0, 1);
+
+		@media (max-width: ($md2+px)) {
+			column-gap: 20px;
+		}
+
+		@media (max-width: ($md3+px)) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas:
+				"logo   logo"
+				"contacts   question"
+				"social   social";
+			row-gap: 30px;
+		}
+
+		@media (max-width: ($md4+px)) {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"logo"
+				"contacts"
+				"question"
+				"social";
+			row-gap: 20px;
+		}
+	}
+
+	// .footer__row
+	&__row {
+		border-top: 1px solid #C8C8C8;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		@include adaptiv-value('padding-top', 32, 20, 1);
+		@include adaptiv-value('padding-bottom', 32, 20, 1);
+		@include adaptiv-value('column-gap', 80, 0, 1);
+
+		@media (max-width: ($md2+px)) {
+			column-gap: 20px;
+		}
+
+		@media (max-width: ($md4+px)) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// .footer__copyfight
+	&__copyfight {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		border-top: 1px solid #C8C8C8;
+		@include adaptiv-value('padding-top', 32, 20, 1);
+		@include adaptiv-value('padding-bottom', 32, 20, 1);
+		font-size: 14px;
+	}
+
+	&__change {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		button {
+			height: 10px;
+			width: 40px;
+			margin-left: 10px;
+		}
+	}
+}
+
+.footer-header {
+
+	// .footer-header__logo
+	&__logo {
+		grid-area: logo;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@media (max-width: ($md3+px)) {
+			align-items: center;
+		}
+	}
+
+	// .footer-header__contacts
+	&__contacts {
+		grid-area: contacts;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+
+		@media (max-width: ($md3+px)) {
+			margin: 0 auto;
+		}
+
+		@media (max-width: ($md4+px)) {
+			margin: 0;
+		}
+	}
+
+	// .footer-header__question
+	&__question {
+		grid-area: question;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@media (max-width: ($md3+px)) {
+			margin: 0 auto;
+		}
+
+		@media (max-width: ($md4+px)) {
+			margin: 0;
+		}
+	}
+
+	// .footer-header__social
+	&__social {
+		grid-area: social;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@media (max-width: ($md3+px)) {
+			justify-content: center;
+		}
+	}
+}
+
+.footer-logo {
+
+	// .footer-logo__logo
+	&__logo {
+		@include adaptiv-value('margin-bottom', 20, 10, 1);
+
+		@media (max-width: ($md3+px)) {
+			position: relative;
+			margin-bottom: 30px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 180%;
+				left: -10%;
+				width: 120%;
+				height: 1px;
+				background-color: #202020;
+			}
+		}
+	}
+
+	// .footer-logo__text
+	&__text {
+		font-size: 14px;
+		line-height: 150%;
+	}
+}
+
+.contacts {
+
+	// .contacts__item
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		line-height: 150%;
+		color: #202020;
+		font-weight: 600;
+		transition: color 0.3s ease 0s;
+
+		&::before {
+			margin: 0 8px 0 0;
+		}
+
+		&:not(:last-child) {
+			@include adaptiv-value('margin-bottom', 16, 10, 1);
+		}
+
+		@media (any-hover:hover) {
+			&:hover {
+				color: $mainColor;
+			}
+		}
+
+		@media (max-width: ($md2+px)) {
+			font-size: 14px;
+		}
+
+		@media (max-width: ($md3+px)) {
+			font-size: 16px;
+		}
+	}
+}
+
+.question {
+
+	// .question__button
+	&__button {
+		font-size: 14px;
+		letter-spacing: 2px;
+		font-weight: 600;
+		text-transform: uppercase;
+		width: 100%;
+		margin-bottom: 18px;
+		transition: all 0.3s ease 0s;
+		@include adaptiv-value('padding-top', 12, 10, 1);
+		@include adaptiv-value('padding-bottom', 12, 10, 1);
+
+		@media (any-hover:hover) {
+			&:hover {
+				background: transparentize($mainColor, 0.3);
+			}
+		}
+
+		@media (max-width: ($md2+px)) {
+			font-size: 12px;
+		}
+
+		@media (max-width: ($md3+px)) {
+			width: auto;
+			padding: 10px 20px;
+		}
+	}
+
+	&__work-hours {
+		width: 100%;
+		@include adaptiv-value('padding-right', 8, 4, 1);
+		@include adaptiv-value('padding-left', 8, 4, 1);
+	}
+}
+
+.work-hours {
+
+	// .work-hours__title
+	&__title {
+		line-height: 130%;
+		color: #202020;
+		font-weight: 600;
+		@include adaptiv-value('margin-bottom', 10, 6, 1);
+	}
+
+	// .work-hours__hours
+	&__hours {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		line-height: 130%;
+		color: #202020;
+		letter-spacing: 0.4px;
+		@include adaptiv-value('font-size', 16, 6, 1);
+
+		@media (max-width: ($md2+px)) {
+			flex-direction: column;
+			font-size: 14px;
+
+			p:first-child {
+				margin-bottom: 6px;
+			}
+		}
+
+		@media (max-width: ($md3+px)) {
+			flex-direction: row;
+			justify-content: start;
+			font-size: 14px;
+
+			p:first-child {
+				margin: 0 6px 0 0;
+			}
+		}
+	}
+}
+
+.social {
+
+	// .social__icon
+	&__icon {
+		color: #A0A0A0;
+		font-size: 24px;
+		transition: color 0.3s ease 0s;
+
+		@media (any-hover:hover) {
+			&:hover {
+				color: #202020;
+			}
+		}
+
+		&:not(:last-child) {
+			@include adaptiv-value('margin-right', 30, 20, 1);
+		}
+	}
+}
+
+.menu-footer {
+	&__column {
+		@media (max-width: ($md4+px)) {
+			&:not(:last-of-type)>button {
+				margin: 0 0 10px 0;
+			}
+		}
+	}
+
+	// .menu-footer__title
+	&__title {
+		cursor: default;
+		margin: 0 0 calc(26px / 24px) * 1em 0;
+
+		._init & {
+			display: flex;
+			width: 100%;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			align-items: center;
+			@extend ._icon-arrow-down;
+
+			&::before {
+				@extend %ic;
+				font-size: 12px;
+				transition: transform 0.3s ease 0s;
+			}
+		}
+
+		&._active {
+			&::before {
+				transform: rotate(-180deg);
+			}
+		}
+
+		@media (max-width: ($md3+px)) {
+			margin: 0;
+		}
+
+	}
+
+	// .menu-footer__list
+	&__list {
+		li {
+			margin: 0 0 10px 0;
+
+			@media (min-width: ($md4+px)) {
+				&:last-child {
+					margin: 0 0 0 0;
+				}
+			}
+
+			a {
+				color: inherit;
+				font-size: 12px;
+				transition: color 0.3s ease 0s;
+				line-height: 120%;
+				font-weight: 500;
+
+				@media (any-hover: hover) {
+					&:hover {
+						color: #202020;
+					}
+				}
+			}
+
+			@media (max-width: ($md3+px)) {
+				&:first-child {
+					margin-top: 16px;
+				}
+			}
+		}
+	}
+}
+
+//====================================================================================================
+
+//====================================================================================================

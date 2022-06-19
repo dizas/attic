@@ -8,5 +8,11 @@ module.exports = {
 		src: pathSrc + "/html/*.html",
 		watch: pathSrc + "/html/**/*.html",
 		dest: pathDest
+	},
+
+	scss: {
+		src: pathSrc + "/scss/*.scss",
+		watch: pathSrc + "/scss/**/*.scss",
+		dest: pathDest + "/css"
 	}
 }

@@ -1,0 +1,239 @@
+//====================================================================================================
+.products {
+	@include adaptiv-value("padding-bottom", 44, 30, 1);
+
+
+	// .products__title
+	&__title {
+		margin: 0px 0px calc(32px/40px) * 1em 0px;
+	}
+
+	// .products__items
+	&__items {
+		display: grid;
+		gap: 32px;
+		grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+	}
+
+
+	// .products__footer
+	&__footer {
+		padding: 32px 0px 0px 0px;
+		text-align: center;
+	}
+
+	// .products__more
+	&__more {
+		min-width: 245px;
+
+		&._hold {
+			opacity: 0.4;
+			cursor: default;
+		}
+	}
+}
+
+.item-product {
+	//background: $greyColor;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	border: 1px solid $borderColor;
+	border-radius: 5px;
+	padding: 2px;
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0 0 25px rgba(212, 209, 205, 0.6);
+
+			._ibg img._active-img {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			._ibg img._hidden-img {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.actions-product__button {
+				transform: translate(0px, 0px);
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	// .item-product__labels
+	&__labels {
+		position: absolute;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-value("right", 24, 10, 1);
+		@include adaptiv-value("top", 24, 10, 1);
+	}
+
+	// .item-product__label
+	&__label {
+		flex: 0 0 48px;
+		width: 48px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		font-weight: 500;
+
+		&:not(:last-child) {
+			margin: 0px 0px 10px 0px;
+		}
+
+		// .item-product__label_sale
+		&_sale {
+			background: #e97171;
+		}
+
+		// .item-product__label_new
+		&_new {
+			background: #2ec1ac;
+		}
+	}
+
+	// .item-product__image
+	&__image {
+		padding: 0px 0px 90% 0px;
+	}
+
+	._hidden-img {
+		transition: all 0.5s ease 0s;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	._active-img {
+		transition: all 0.5s ease 0s;
+	}
+
+	// .item-product__body
+	&__body {
+		flex: 1 1 auto;
+		padding: 16px 16px 30px 16px;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	}
+
+	// .item-product__content
+	&__content {
+		flex: 1 1 auto;
+	}
+
+	// .item-product__title
+	&__title {
+		margin: 0px 0px calc(8px/24px) * 1em 0px;
+		transition: all 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+			}
+		}
+	}
+
+	// .item-product__text
+	&__text {
+		color: $greyColorDark;
+		line-height: 150%;
+		margin: 0px 0px calc(16px/24px) * 1em 0px;
+	}
+
+	// .item-product__prices
+	&__prices {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		line-height: 150%;
+	}
+
+	// .item-product__price
+	&__price {
+		@include adaptiv-value("font-size", 20, 16, 1);
+		font-weight: 600;
+
+		// .item-product__price_old
+		&_old {
+			@include adaptiv-value("font-size", 16, 14, 1);
+			font-weight: normal;
+			margin: 0px 0px 0px 16px;
+			color: #b0b0b0;
+			text-decoration: line-through;
+		}
+	}
+
+	// .item-product__actions
+	&__actions {
+		padding: 20px 0px 0px 0px;
+	}
+}
+
+.actions-product {
+
+	// .actions-product__body
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	// .actions-product__button
+	&__button {
+		flex: 1 1 100%;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+
+		&._hold {
+			opacity: 0.2;
+			cursor: default;
+		}
+
+		@media (any-hover: hover) {
+			transform: translate(0px, 30px);
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: -80px;
+			left: 0;
+			width: 80%;
+			margin-left: 10%;
+			transition: all 0.3s ease 0s;
+			z-index: 3;
+		}
+	}
+
+	// .actions-product__link
+	&__link {
+		display: flex;
+		align-items: center;
+		color: $greyColorDark;
+		transition: color 0.3s ease 0s;
+		font-size: 14px;
+
+		&::before {
+			margin: 0px 10px 0px 0px;
+			font-size: 16px;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+			}
+		}
+	}
+}
+
+//====================================================================================================

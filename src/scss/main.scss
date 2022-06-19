@@ -1,0 +1,110 @@
+//------<ФОРМУЛЫ>------
+@use "sass:math";
+
+
+//------<МИКСИНЫ>------
+@import "./parts/_mixins";
+
+
+//------<ШРИФТЫ>------
+// Подключаем шрифты
+@import "./parts/_fonts";
+
+// Иконочные шрифты
+@import "./parts/_icons";
+
+// Шрифт по умолчанию
+$fontFamily: "Gilroy";
+$fontSize: 16;
+
+
+//------<РАЗМЕРЫ>------
+// Максимальная и минимальная ширина
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1270;
+
+// Точки медиа запросов
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+
+//------<ЦВЕТА>------
+// Основной цвет
+$mainColor: #478A84;
+
+// Затемнение и осветление основного цвета
+$darker-color: darken($mainColor, 10%);
+$lighter-color: lighten($mainColor, 10%);
+
+// Основной цвет шрифта
+$mainTextColor: #3A3A3A;
+
+// Дополнительные цвета
+$greyColor: #f0f0f0;
+$greyColorMedium: #c0c0c0;
+$greyColorDark: #616161;
+$bgfColor: #f0f0f0;
+$bgsColor: #f8f8f8;
+$borderColor: #d8d8d8;
+
+
+//------<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>------
+svg path {
+	stroke: inherit;
+	stroke-width: inherit;
+	fill: inherit;
+}
+
+@import "./parts/_null";
+
+body {
+	color: $mainTextColor;
+
+	&._lock {
+		overflow: hidden;
+	}
+}
+
+
+//------<ОБОЛОЧКА WRAPPER>------
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+
+//------<ОСНОВНАЯ СЕТКА>------
+._container {
+	max-width: $maxWidthContainer + px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+
+//------<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>------
+@import "./parts/_forms";
+@import "./parts/_ui";
+
+
+//------<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>------
+//@import "./parts/lightgallery";
+@import "./parts/1_header";
+@import "./parts/2_main_slider";
+@import "./parts/3_catalog";
+@import "./parts/4_product";
+@import "./parts/5_collections";
+@import "./parts/6_benefits";
+@import "./parts/7_tips";
+@import "./parts/footer";
+
+
+//------<ОСНОВНОЙ БЛОК>------
+.page {
+	flex: 1 1 auto;
+}
