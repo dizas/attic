@@ -9,6 +9,11 @@
 	"browserslist": [
 		"last 3 versions"
 	],
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/dizas/attic.git"
@@ -20,10 +25,13 @@
 	},
 	"homepage": "https://github.com/dizas/attic#readme",
 	"devDependencies": {
+		"@babel/core": "^7.18.5",
+		"@babel/preset-env": "^7.18.2",
 		"browser-sync": "^2.27.10",
 		"del": "^6.1.1",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
+		"gulp-babel": "^8.0.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-csso": "^4.0.1",
 		"gulp-file-include": "^2.3.0",
@@ -38,6 +46,9 @@
 		"gulp-sass-glob": "^1.1.0",
 		"gulp-shorthand": "^1.1.0",
 		"gulp-size": "^4.0.1",
-		"sass": "^1.52.3"
+		"gulp-uglify": "^3.0.2",
+		"sass": "^1.52.3",
+		"webpack": "^5.73.0",
+		"webpack-stream": "^7.0.0"
 	}
 }
